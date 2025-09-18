@@ -1,1 +1,269 @@
+body {
+  font-family: Tahoma, Arial;
+  background: radial-gradient(circle at center, #0a0f3c, #000);
+  color: white;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
 
+/* تسجيل الدخول وتسجيل حساب */
+#loginScreen, #registerScreen {
+  background: rgba(16, 20, 64, 0.95);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 0 15px #222;
+}
+#loginScreen h1, #registerScreen h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+input[type=text], input[type=password] {
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #3d52d5;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+  background: #222;
+  color: white;
+}
+button[type=submit], #showRegisterBtn, #showLoginBtn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #0b74ff;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 8px;
+}
+button:hover {
+  background: #3d52d5;
+}
+.error {
+  color: #dc3545;
+  font-size: 1rem;
+  min-height: 1.5em;
+}
+
+/* شاشة البداية وأزرارها */
+.main-buttons {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column; /* الزراير تحت بعض */
+  gap: 15px;
+  align-items: center;
+}
+#startScreen button, .main-buttons button {
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 10px;
+  background: #0b74ff;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  width: 210px; /* كل الزراير بنفس العرض */
+}
+#startScreen button:hover, .main-buttons button:hover {
+  background: #3d52d5;
+}
+
+#playerRankBox {
+  margin-top: 18px;
+  color: #ffc107;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+/* نافذة الإعدادات */
+#settingsModal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.settings-content {
+  background: #222a;
+  padding: 30px 25px;
+  border-radius: 18px;
+  box-shadow: 0 0 15px #222;
+  min-width: 280px;
+}
+.settings-content h2 {
+  margin-bottom: 15px;
+}
+.settings-content label {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  display: block;
+}
+.settings-content input[type=checkbox] {
+  accent-color: #0b74ff;
+  margin-left: 10px;
+}
+.settings-content button {
+  background: #0b74ff;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+/* نافذة المتصدرين */
+#leaderboardModal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+.leaderboard-content {
+  background: #222a;
+  padding: 30px 25px;
+  border-radius: 18px;
+  box-shadow: 0 0 15px #222;
+  min-width: 320px;
+}
+.leaderboard-content h2 {
+  margin-bottom: 15px;
+}
+#leaderboardTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+  background: #232a55;
+  border-radius: 8px;
+  overflow: hidden;
+}
+#leaderboardTable th, #leaderboardTable td {
+  border: 1px solid #3d52d5;
+  padding: 8px 5px;
+  text-align: center;
+}
+#leaderboardTable th {
+  background: #0b74ff;
+  color: #fff;
+}
+#leaderboardTable tr:nth-child(even) td {
+  background: #1e2338;
+}
+.leaderboard-content button {
+  background: #0b74ff;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+/* كارت اللعبة */
+#gameCard {
+  width: 95%;
+  max-width: 700px;
+}
+#questionBox {
+  background: transparent;
+}
+#questionText {
+  background: linear-gradient(to right, #1e2a78, #101540);
+  border: 3px solid #3d52d5;
+  border-radius: 25px;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+#scoreBox {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #0bffea;
+  font-weight: bold;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 70px 1fr;
+  grid-template-rows: auto auto;
+  gap: 15px;
+  align-items: center;
+}
+
+#timer {
+  grid-row: 1 / span 2;
+  grid-column: 2;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid #3d52d5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  background: #000;
+  color: #0bffea;
+  margin: auto;
+}
+
+/* أزرار الخيارات */
+.option {
+  background: linear-gradient(to right,#1e2a78,#101540);
+  border: 3px solid #3d52d5;
+  border-radius: 25px;
+  padding: 15px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+}
+.option:hover {
+  background: #0b74ff;
+}
+.option.correct {
+  background: #28a745 !important;
+  color: #fff !important;
+}
+.option.wrong {
+  background: #dc3545 !important;
+  color: #fff !important;
+}
+
+/* أزرار التحكم */
+.controls {
+  margin-top: 20px;
+}
+.controls button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 10px;
+  background: #0b74ff;
+  color: white;
+  cursor: pointer;
+}
+#restartBtn {
+  background: #28a745;
+  color: white;
+  font-weight: bold;
+}
