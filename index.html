@@ -1,1 +1,106 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>من سيربح المليون</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<!-- شاشة تسجيل الدخول -->
+<div id="loginScreen">
+  <h1>تسجيل الدخول للعبة</h1>
+  <form id="loginForm" autocomplete="off">
+    <input type="text" id="loginUsername" placeholder="اسم المستخدم" required>
+    <input type="password" id="loginPassword" placeholder="كلمة المرور" required>
+    <button type="submit">دخول</button>
+    <p id="loginError" class="error"></p>
+  </form>
+  <button id="showRegisterBtn">تسجيل حساب جديد</button>
+</div>
+
+<!-- شاشة تسجيل حساب جديد -->
+<div id="registerScreen" style="display:none">
+  <h1>تسجيل حساب جديد</h1>
+  <form id="registerForm" autocomplete="off">
+    <input type="text" id="registerUsername" placeholder="اسم المستخدم" required>
+    <input type="password" id="registerPassword" placeholder="كلمة المرور" required>
+    <button type="submit">تسجيل</button>
+    <p id="registerError" class="error"></p>
+  </form>
+  <button id="showLoginBtn">رجوع لتسجيل الدخول</button>
+</div>
+
+<!-- الأصوات -->
+<audio id="bgMusic" src="bg-music.mp3" loop></audio>
+<audio id="groogCorrect" src="groog-correct.mp3"></audio>
+<audio id="groogWrong" src="groog-wrong.mp3"></audio>
+
+<!-- شاشة البداية -->
+<div id="startScreen" style="display:none">
+  <!-- شعار اللعبة بدل العنوان -->
+  <img src="million-logo.png" alt="شعار من سيربح المليون" style="max-width:220px; margin-bottom:20px;">
+  <p id="welcomePlayer"></p>
+  <div class="main-buttons">
+    <button id="playBtn">إبدأ اللعبة</button>
+    <button id="settingsBtn">إعدادات</button>
+    <button id="leaderboardBtn">المتصدرين</button>
+    <button id="logoutBtn">تسجيل خروج</button>
+  </div>
+  <div id="playerRankBox"></div>
+</div>
+
+<!-- نافذة الإعدادات -->
+<div id="settingsModal" style="display:none">
+  <div class="settings-content">
+    <h2>إعدادات اللعبة</h2>
+    <label>
+      <input type="checkbox" id="muteSounds">
+      كتم الأصوات
+    </label>
+    <button id="closeSettingsBtn">إغلاق</button>
+  </div>
+</div>
+
+<!-- نافذة المتصدرين -->
+<div id="leaderboardModal" style="display:none">
+  <div class="leaderboard-content">
+    <h2>المتصدرين</h2>
+    <table id="leaderboardTable">
+      <thead>
+        <tr>
+          <th>الترتيب</th>
+          <th>اسم اللاعب</th>
+          <th>أعلى رصيد</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- يتم تعبئتها ديناميكياً -->
+      </tbody>
+    </table>
+    <button id="closeLeaderboardBtn">إغلاق</button>
+  </div>
+</div>
+
+<!-- كارت اللعبة -->
+<div id="gameCard" style="display:none">
+  <div id="questionBox">
+    <div id="questionText"></div>
+    <div id="scoreBox">رصيدك: <span id="score">0</span> جنيه</div>
+    <div class="options-grid">
+      <button class="option" id="opt1"></button>
+      <button class="option" id="opt2"></button>
+      <div id="timer">30</div>
+      <button class="option" id="opt3"></button>
+      <button class="option" id="opt4"></button>
+    </div>
+    <div class="controls">
+      <button id="restartBtn" style="display:none">إعادة اللعب</button>
+    </div>
+  </div>
+  <p id="gameMsg"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
